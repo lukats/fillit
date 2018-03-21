@@ -1,9 +1,9 @@
 NAME = fillit
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-LIBFT = ./libft/
-HEADER = ./include/
-SRC = ./srcs/ 
+LIBFT = libft/
+HEADER = include/
+SRCS = srcs/teste.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -14,10 +14,10 @@ OBJ = $(SRCS:.c=.o)
 all: lib $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(LIBFT)libft.a $^ -o $@
+	@$(CC) $(CFLAGS) -I $(HEADER) srcs/main.c $(LIBFT)libft.a $< -o $@
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 lib:
 	@make -C $(LIBFT) all
