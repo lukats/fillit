@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 LIBFT = libft/
 HEADER = include/
-SRCS = srcs/teste.c
+SRCS = srcs/
 
 OBJ = $(SRCS:.c=.o)
 
