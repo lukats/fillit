@@ -94,7 +94,8 @@ SRCS = ft_atoi_base.c \
 	   ft_strtrim.c \
 	   ft_tolower.c \
 	   ft_toupper.c \
-	   ft_xpowni.c
+	   ft_xpowni.c \
+	   ft_gnl.c
 
 OBJ = $(SRCS:.c=.o)
 
