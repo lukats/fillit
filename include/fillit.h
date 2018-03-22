@@ -5,10 +5,10 @@
 
 typedef struct		s_tetris
 {
-	char			**tetris;
-	char			letter;
+	char		**tetris;
+	char		letter;
 	struct s_tetris	*next;
-}					t_tetris;
+}			t_tetris;
 
 
 #endif
