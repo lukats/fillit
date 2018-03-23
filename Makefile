@@ -1,18 +1,33 @@
-RM	= rm -rf
+NAME = fillit
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
+LIBFT = libft/
+HEADER = include/
+SRCS =
 
-all	:
-		make -s -C libft/
-		make -s -C srcs/
+OBJ = $(SRCS:.c=.o)
+
+.PHONY: all clean fclean re
+.NOTPARALLEL: re
 
 
-clean	:
-		make clean -s -C libft/
-		make clean -s -C srcs/
+all: lib $(NAME)
 
-fclean	:	clean
-		make fclean -s -C libft/
-		make fclean -s -C srcs/
+$(NAME): $(OBJ)
+	@$(CC) $(CFLAGS) -I $(HEADER) srcs/main.c $(LIBFT)libft.a $< -o $@
 
-re	:	fclean all
+%.o: %.c
+	@$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
 
-.PHONY	:	all clean fclean re
+lib:
+	@make -C $(LIBFT) all
+
+clean:
+	@/bin/rm -rf $(OBJ)
+	@make -C $(LIBFT) clean
+
+fclean: clean
+	@/bin/rm -rf $(NAME)
+	@make -C $(LIBFT) fclean
+
+re: fclean all

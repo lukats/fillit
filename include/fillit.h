@@ -3,34 +3,17 @@
 
 # include "../libft/libft.h"
 
-<<<<<<< HEAD
 # define CHECK_OPEN_FILE(x) if (x <= -1) return (NULL);
 # define CHECK_READ_FILE(x) if (x <= -1) return (NULL);
 
-typedef struct		s_tetris
-{
-	char		**tetris;
-	char		letter;
-	int		nb;
-	struct s_tetris	*next;
-}			t_tetris;
-
-typedef struct		s_ctrl
-{
-        t_tetris	*begin;
-	int		nb_node;
-        t_tetris	*end;
-}			t_ctrl;
-=======
 typedef struct			s_tetris
 {
 	char				**tetris;
-	U_INT				h;
-	U_INT				w;
-	char				c;
+	U_INT				height;
+	U_INT				width;
+	char				letter;
 	struct s_tetris		*next;
 }						t_tetris;
->>>>>>> 4f0cc1b7a6cb566ba609ddf26f225731e0b60748
 
 char	*get_tetriminos(char *file);
 t_ctrl	*push_front(t_ctrl *ctrl, char **tab);
@@ -39,4 +22,5 @@ void	print_list(t_ctrl *ctrl);
 t_ctrl	*pop_front(t_ctrl *ctrl);
 t_ctrl	*distroy_list(t_ctrl *ctrl);
 t_ctrl	*put_tetriminos_list(char *buf);
+
 #endif
