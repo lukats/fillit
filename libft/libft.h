@@ -46,7 +46,7 @@ char				*ft_itoa_base(int n, char const *base);
 int					ft_atoi_base(char const *str, char const *base);
 char				*ft_ftoa(float nbr);
 float				ft_fmod(float value, float modulo);
-int					ft_gnl(const int fd, char **line);
+int				ft_gnl(const int fd, char **line);
 
 void				*ft_memset(void *b, int c, U_LONG len);
 void				ft_bzero(void *b, U_LONG len);
