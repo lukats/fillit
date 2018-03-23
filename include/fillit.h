@@ -3,6 +3,7 @@
 
 # include "../libft/libft.h"
 
+<<<<<<< HEAD
 # define CHECK_OPEN_FILE(x) if (x <= -1) return (NULL);
 # define CHECK_READ_FILE(x) if (x <= -1) return (NULL);
 
@@ -20,6 +21,16 @@ typedef struct		s_ctrl
 	int		nb_node;
         t_tetris	*end;
 }			t_ctrl;
+=======
+typedef struct			s_tetris
+{
+	char				**tetris;
+	U_INT				h;
+	U_INT				w;
+	char				c;
+	struct s_tetris		*next;
+}						t_tetris;
+>>>>>>> 4f0cc1b7a6cb566ba609ddf26f225731e0b60748
 
 char	*get_tetriminos(char *file);
 t_ctrl	*push_front(t_ctrl *ctrl, char **tab);
