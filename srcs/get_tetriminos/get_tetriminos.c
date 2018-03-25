@@ -1,43 +1,41 @@
 # include "fillit.h"
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <stdio.h>
 
 char	*get_tetriminos(char *file)
 {
-	int		fd = 0;
-	char		*buf = NULL;
-	int		ret = 0;
-	char		**tab;
-	struct stat	buf_size;
+	/* int		fd = 0; */
+	/* char		*buf = NULL; */
+	/* int		ret = 0; */
+	/* struct stat	buf_size; */
 
-	int	i;
-	CHECK_OPEN_FILE((fd = open(file, O_RDONLY)));
-	if (stat(file, &buf_size) == -1)
+	/* CHECK_OPEN_FILE((fd = open(file, O_RDONLY))); */
+	/* if (stat(file, &buf_size) == -1) */
+	/* 	return (NULL); */
+	/* MALLOC_CHECK((buf = malloc(sizeof(char) * buf_size.st_size + 1))); */
+	/* CHECK_READ_FILE((ret = read(fd, buf, buf_size.st_size))); */
+	/* buf[ret] = '\0'; */
+	/* if (close(fd) == -1) */
 		return (NULL);
-	MALLOC_CHECK((buf = malloc(sizeof(char) * buf_size.st_size + 1)));
-	CHECK_READ_FILE((ret = read(fd, buf, buf_size.st_size)));
-	buf[ret] = '\0';
-	if (close(fd) == -1)
-		return (NULL);
-	return (buf);
+	/* return (buf); */
 }
 
-t_ctrl	*put_tetriminos_list(char *buf)
+t_list	*put_tetriminos_list(char **lines)
 {
-	int	i;
+	/* int		i; */
+	/* char		**tetris; */
+	/* t_tetris	*node; */
+	/* t_list		*new; */
+	/* t_list		*tmp; */
 
-	i = -1;
-	while (*buf)
-	{
-		if (i == 4)
-		{
-			ft_putstr("ici\n");
-			i = -1;
-		}
-		i++;
-		buf++;
-	}
+	/* i = -1; */
+	/* tmp = NULL; */
+	/* while (lines[++i]) */
+	/* { */
+	/* 	tetris = ft_strsplit(lines[i], '\0'); */
+	/* 	node  = fill_node(tetris, (char) i + 65); */
+	/* 	new = ft_lstnew(node, sizeof(node) + sizeof(tetris)); */
+	/* 	new->next = tmp; */
+	/* 	tmp = new; */
+	/* } */
+	ft_putstr("salut\n");
+	return (NULL);
 }
