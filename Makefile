@@ -3,7 +3,9 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 LIBFT = libft/
 HEADER = include/
-SRCS =
+SRCS = srcs/get_tetriminos/get_tetriminos.c \
+	   srcs/get_tetriminos/fill_node.c \
+	   srcs/get_tetriminos/replace_char.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -17,7 +19,7 @@ $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) -I $(HEADER) srcs/main.c $(LIBFT)libft.a $< -o $@
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(HEADER) -I $(LIBFT) -c $< -o $@
 
 lib:
 	@make -C $(LIBFT) all

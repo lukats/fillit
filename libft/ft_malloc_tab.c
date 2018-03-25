@@ -1,23 +1,21 @@
 #include "libft.h"
 
-char	**ft_malloc_tab(int nb_line, int row)
+char		**ft_malloc_tab(int y, int x)
 {
 	char	**tab;
-	int	y;
-	int	x;
+	int		i;
+	int		j;
 
-	y = -1;
-	if ((tab = malloc(sizeof(char *) * (nb_line + 1))) == NULL)
-		return (NULL);
-	while (++y < (nb_line))
+	i = -1;
+	MALLOC_CHECK((tab = malloc(sizeof(char *) * (y + 1))));
+	while (++i < y)
 	{
-		if ((tab[y] = malloc(sizeof(char) * (row + 1))) == NULL)
-			return (NULL);
-		x = -1;
-		while (++x < (row))
-			tab[y][x] = '\0';
-		tab[y][x] = '\0';
+		MALLOC_CHECK((tab[i] = malloc(sizeof(char) * (x + 1))));
+		j = -1;
+		while (++j < x)
+			tab[i][j] = '\0';
+		tab[i][j] = '\0';
 	}
-	tab[y] = NULL;
+	tab[i] = 0;
 	return (tab);
 }
