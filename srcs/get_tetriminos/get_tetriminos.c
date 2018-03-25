@@ -1,11 +1,11 @@
 # include "fillit.h"
 
-char	*get_tetriminos(char *file)
+char		*get_tetriminos(char *file)
 {
 	char	*lines;
 	char	*tmp;
 	char	*p;
-	int	fd;
+	int		fd;
 
 	tmp = ft_strnew(0);
 	p = tmp;
@@ -14,6 +14,9 @@ char	*get_tetriminos(char *file)
 	{
 		p = tmp;
 		tmp = ft_strjoin(tmp, lines);
+		ft_memdel((void **)&p);
+		p = tmp;
+		tmp = ft_strjoin(tmp, "\n");
 		ft_memdel((void **)&p);
 	}
 	return (tmp);
