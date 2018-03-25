@@ -19,7 +19,7 @@ $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) -I $(HEADER) srcs/main.c $(LIBFT)libft.a $< -o $@
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -I $(HEADER) -I $(LIBFT) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(HEADER) -I $(LIBFT) -c $< -o $@ -L libft -lft
 
 lib:
 	@make -C $(LIBFT) all
