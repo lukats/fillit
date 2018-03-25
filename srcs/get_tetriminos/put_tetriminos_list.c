@@ -18,5 +18,5 @@ t_list	*put_tetriminos_list(char **lines)
 		new->next = tmp;
 		tmp = new;
 	}
-	return (NULL);
+	return (tmp);
 }

@@ -11,7 +11,7 @@ char			**ft_strsplit(char const *s, char c)
 	i = ft_strlen(s);
 	j = 0;
 	MALLOC_CHECK((tmp = (char **)ft_memalloc(sizeof(char *) * (w + 1))));
-	MALLOC_CHECK((tmp[w] = ft_strnew(0)));
+	tmp[w] = 0;
 	while (w > 0)
 	{
 		MALLOC_CHECK((tmp[w - 1] = ft_strnew((j = ft_rstrlenic(s, i, c)))));

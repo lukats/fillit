@@ -7,6 +7,7 @@ char		*get_tetriminos(char *file)
 	char	*p;
 	int		fd;
 
+	lines = 0;
 	tmp = ft_strnew(0);
 	p = tmp;
 	fd = open(file, O_RDONLY);
