@@ -6,7 +6,7 @@ char			*ft_strsub(char const *s, U_INT start, U_LONG len)
 	char		*tmp;
 
 	i = 0;
-	i --;
+	i--;
 	MALLOC_CHECK((tmp = ft_strnew(len)));
 	while (++i < len)
 		tmp[i] = s[start + i];

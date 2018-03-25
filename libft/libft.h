@@ -8,6 +8,7 @@
 # define U_CHAR unsigned char
 # define U_INT unsigned int
 # define MALLOC_CHECK(x) if (!x) return (0)
+# define MALLOC_CHECK_GNL(x) if (!x) return (-1)
 # define ABS(x) (x < 0) ? -x : x
 # define BUFF_SIZE 1
 
@@ -46,7 +47,7 @@ char				*ft_itoa_base(int n, char const *base);
 int					ft_atoi_base(char const *str, char const *base);
 char				*ft_ftoa(float nbr);
 float				ft_fmod(float value, float modulo);
-int				ft_gnl(const int fd, char **line);
+int					ft_gnl(const int fd, char **line);
 
 void				*ft_memset(void *b, int c, U_LONG len);
 void				ft_bzero(void *b, U_LONG len);
