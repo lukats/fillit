@@ -1,35 +1,18 @@
-NAME = fillit
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
-LIBFT = libft/
-HEADER = include/
-SRCS = srcs/get_tetriminos/get_tetriminos.c \
-	   srcs/get_tetriminos/fill_node.c \
-	   srcs/get_tetriminos/replace_char.c
+RM	= rm -rf
 
-OBJ = $(SRCS:.c=.o)
-
-.PHONY: all clean fclean re
-.NOTPARALLEL: re
+all	:
+		make -s -C libft/
+		make -s -C srcs/
 
 
-all: lib $(NAME)
+clean	:
+		make clean -s -C libft/
+		make clean -s -C srcs/
 
-$(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) -I $(HEADER) srcs/main.c $(LIBFT)libft.a $< -o $@
+fclean	:	clean
+		make fclean -s -C libft/
+		make fclean -s -C srcs/
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -I $(HEADER) -I $(LIBFT) -c $< -o $@ -L libft -lft
+re	:	fclean all
 
-lib:
-	@make -C $(LIBFT) all
-
-clean:
-	@/bin/rm -rf $(OBJ)
-	@make -C $(LIBFT) clean
-
-fclean: clean
-	@/bin/rm -rf $(NAME)
-	@make -C $(LIBFT) fclean
-
-re: fclean all
+.PHONY	:	all clean fclean re
