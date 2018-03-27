@@ -12,7 +12,7 @@ t_list	*put_tetriminos_list(char **lines)
 	tmp = NULL;
 	while (lines[++i])
 	{
-		tetris = ft_strsplit(lines[i], '\0');
+		tetris = ft_strsplit(lines[i], '\n');
 		node  = fill_node(tetris, (char) i + 65);
 		new = ft_lstnew(node, sizeof(node) + sizeof(tetris));
 		new->next = tmp;
