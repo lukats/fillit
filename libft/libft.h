@@ -78,8 +78,6 @@ int                 ft_toupper(int c);
 int                 ft_tolower(int c);
 char				**ft_malloc_tab(int y, int x);
 
-
-
 void				*ft_memalloc(U_LONG size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(U_LONG size);
