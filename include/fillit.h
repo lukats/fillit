@@ -13,7 +13,6 @@ typedef struct			s_tetris
 	U_INT				height;
 	U_INT				width;
 	char				letter;
-	struct s_tetris		*next;
 }						t_tetris;
 
 char					*replace_char(char *str, char c);
