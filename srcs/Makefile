@@ -2,7 +2,8 @@ CC	=	gcc
 
 RM	=	rm -f
 
-CFLAGS	=	-g -Wextra -Werror -Wall -I../include/
+# CFLAGS	=	-g -Wextra -Werror -Wall -I../include/
+CFLAGS	=	-g -I../include/
 
 NAME	=	../fillit
 
@@ -11,6 +12,7 @@ SRCS	=	./main.c				\
 		./get_tetriminos/put_tetriminos_list.c	\
 		./get_tetriminos/fill_node.c		\
 		./get_tetriminos/replace_char.c		\
+		./algorithm/shift_n.c			\
 
 OBJS	=	$(SRCS:.c=.o)
 

@@ -1,6 +1,6 @@
 #include "fillit.h"
 
-t_list	*put_tetriminos_list(char **lines)
+t_list			*put_tetriminos_list(char **lines)
 {
 	int		i;
 	char		**tetris;
@@ -9,7 +9,7 @@ t_list	*put_tetriminos_list(char **lines)
 	t_list		*tmp;
 
 	i = -1;
-	tmp = NULL;
+	tmp = 0;
 	while (lines[++i])
 	{
 		tetris = ft_strsplit(lines[i], '\0');

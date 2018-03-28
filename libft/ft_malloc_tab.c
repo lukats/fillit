@@ -3,8 +3,8 @@
 char		**ft_malloc_tab(int y, int x)
 {
 	char	**tab;
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = -1;
 	MALLOC_CHECK((tab = malloc(sizeof(char *) * (y + 1))));

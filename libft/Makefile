@@ -95,7 +95,8 @@ SRCS = ft_atoi_base.c \
 	   ft_tolower.c \
 	   ft_toupper.c \
 	   ft_xpowni.c \
-	   ft_gnl.c
+	   ft_gnl.c\
+	   ft_malloc_tab.c \
 
 OBJ = $(SRCS:.c=.o)
 
