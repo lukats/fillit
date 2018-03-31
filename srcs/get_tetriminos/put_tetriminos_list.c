@@ -10,11 +10,15 @@ t_list			*put_tetriminos_list(char **lines)
 
 	i = -1;
 	tmp = 0;
+	new = 0;
+	node = 0;
 	while (lines[++i])
 	{
-		tetris = ft_strsplit(lines[i], '\n');
+		if (!(tetris = ft_strsplit(lines[i], '\n')))
+			return (tmp);
 		node  = fill_node(tetris, (char) i + 65);
 		new = ft_lstnew(node, sizeof(node) + sizeof(tetris));
+		ft_memdel((void **) &node);
 		new->next = tmp;
 		tmp = new;
 	}
