@@ -2,8 +2,8 @@ CC	=	gcc
 
 RM	=	rm -f
 
-# CFLAGS	=	-g -Wextra -Werror -Wall -I../include/
-CFLAGS	=	-g -I../include/
+CFLAGS	=	-Wextra -Werror -Wall -I../include/
+# CFLAGS	=	-g -I../include/
 
 NAME	=	../fillit
 

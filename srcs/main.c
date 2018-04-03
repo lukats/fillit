@@ -13,13 +13,15 @@ int			main(int ac, char **av)
 			return (1);
 		shift = ft_malloc_tab((y = ft_nlines(ft_lstlen(list))), ft_lstlen(list));
 		shift = shift_n(shift, ft_lstlen(list), y / 2);
+		tetris = (t_tetris *)list->content;
 		int	i = 0;
-		while (shift[i])
-		{
-			ft_putstr(shift[i]);
-			ft_putstr("\n");
-			i++;
-		}
+		if (get_id_tetris(tetris->tetris) == 114)
+			while (shift[i])
+			{
+				ft_putstr(shift[i]);
+				ft_putstr("\n");
+				i++;
+			}
 	}
 	else
 		ft_putendl("usage : fillit [file] - Only one parameter");

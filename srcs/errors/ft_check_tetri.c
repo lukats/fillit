@@ -42,7 +42,7 @@ static int		ft_check_one(char **minos)
 	return (i != 4);
 }
 
-static int		ft_check_one(char **minos)
+static int		ft_check_count(char **minos)
 {
 	U_INT		i;
 	U_INT		j;
