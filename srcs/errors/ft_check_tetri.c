@@ -1,8 +1,9 @@
 #include "fillit.h"
 
 static int		ft_check_one(char **minos);
+static int		ft_check_count(char **minos);
 
-int				ft_check_tetri(char ***minos)
+int				ft_check_tetri(char **minos)
 {
 	char		**tmp;
 	int			i;
@@ -12,34 +13,55 @@ int				ft_check_tetri(char ***minos)
 	while (minos[++i])
 	{
 		MALLOC_CHECK((tmp = ft_strsplit(minos[i], '\n')));
-		if (ft_check_one(tmp))
-			return (0);
+		if (ft_check_one(tmp) || ft_check_count(tmp))
+			return (1);
 		ft_memdel((void **)tmp);
 	}
-	return (1);
+	return (0);
 }
 
 static int		ft_check_one(char **minos)
 {
 	U_INT		i;
 	U_INT		j;
-	int			r;
 
-	r = 0;
 	i = 0;
 	while (minos[i])
 	{
 		j = 0;
 		while (minos[i][j])
 		{
-			r = (r == 0) ? ft_tetris_mask(minos, i, j) : r;
+			if (minos[i][j] != '#' && minos[i][j] != '.')
+				return (1);
 			j++;
 		}
 		if (j != 4)
 			return (1);
 		i++;
 	}
-	if (i != 4 || !r)
-		return (1);
-	return (0);
+	return (i != 4);
+}
+
+static int		ft_check_one(char **minos)
+{
+	U_INT		i;
+	U_INT		j;
+	U_INT		a;
+	U_INT		b;
+
+	i = 0;
+	a = 0;
+	b = 0;
+	while (minos[i])
+	{
+		j = 0;
+		while (minos[i][j])
+		{
+			a += (minos[i][j] == '#') ? 1 : 0;
+			b += (minos[i][j] == '.') ? 1 : 0;
+			j++;
+		}
+		i++;
+	}
+	return (a != 4 || b != 12);
 }

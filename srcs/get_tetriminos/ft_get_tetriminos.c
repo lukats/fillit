@@ -9,7 +9,7 @@ int				ft_get_tetriminos(char *av, t_list **list)
 	str = replace_char(str, 'X');
 	tab = ft_strsplit(str, 'X');
 	ft_memdel((void **)&str);
-	if (!ft_check_tetri(tab))
+	if (ft_check_tetri(tab))
 	{
 		ft_putendl("error");
 		ft_memdel((void **)tab);

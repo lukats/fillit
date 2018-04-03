@@ -21,10 +21,11 @@ t_list					*put_tetriminos_list(char **lines);
 char					*get_tetriminos(char *file);
 t_tetris				*fill_node(char **tetris, char lettre);
 char					**shift_n(char **tab, int x, int y);
-int						ft_tetris_mask(char **t, U_INT i, U_INT j);
+int						ft_tetris_mask(char **t);
 char					**ft_new_tetris(char **tetris, t_tetris *src);
-U_LONG					ft_size_tetriminos(t_tetris *src);
+void					ft_size_tetriminos(t_tetris *src);
 int						ft_check_tetri(char **minos);
 U_INT					ft_nlines(U_INT x);
+int						get_id_tetris(char **lines);
 
 #endif
