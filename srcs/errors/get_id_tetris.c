@@ -9,6 +9,7 @@ int			get_id_tetris(char **lines)
 
 	y = -1;
 	i = -1;
+	tmp = 0;
 	while (lines[++y])
 	{
 		s = tmp;
