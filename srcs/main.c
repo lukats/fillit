@@ -16,13 +16,11 @@ int			main(int ac, char **av)
 		shift = ft_malloc_tab((y = ft_nlines(ft_lstlen(list))), ft_lstlen(list));
 		shift = shift_n(shift, ft_lstlen(list), y / 2);
 		i = 0;
-		tetris = (t_tetris *)list->content;
-		if (get_id_tetris(tetris->tetris) == 114)
-			while (shift[i])
-			{
-				ft_putendl(shift[i]);
-				i++;
-			}
+		while (shift[i])
+		{
+			ft_putendl(shift[i]);
+			i++;
+		}
 		ft_putendl("_");
 		l = list;
 		while (l)
@@ -34,6 +32,8 @@ int			main(int ac, char **av)
 				ft_putendl(tetris->tetris[i]);
 				i++;
 			}
+			ft_putendl("_");
+			ft_putnbr(get_id_tetris(tetris->tetris));
 			ft_putendl("_");
 			l = l->next;
 		}
