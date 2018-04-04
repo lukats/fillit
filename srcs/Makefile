@@ -19,8 +19,8 @@ SRCS	=	./main.c \
 			./errors/ft_new_tetris.c \
 			./errors/ft_size_tetriminos.c \
 			./errors/ft_check_tetri.c \
-			./errors/get_id_tetris.c
-			
+			./errors/get_id_tetris.c \
+			./errors/tab_id_tetris.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
