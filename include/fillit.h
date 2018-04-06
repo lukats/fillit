@@ -28,4 +28,5 @@ int						ft_check_tetri(char **minos);
 U_INT					ft_nlines(U_INT x);
 int						get_id_tetris(char **lines);
 int		*tab_id_tetris(t_list *list);
+char	**tab_tmp(t_list *list);
 #endif
