@@ -1,41 +1,27 @@
 #include "fillit.h"
 
-int			main(int ac, char **av)
+int				main(int ac, char **av)
 {
 	char		**shift;
+	int			*p;
+	U_LONG		i;
 	t_list		*list;
-	t_list		*l;
-	int			y;
-	t_tetris	*tetris;
-	int			i;
 
 	if (ac == 2)
 	{
 		if (ft_get_tetriminos(av[ac - 1], &list))
 			return (1);
-		shift = ft_malloc_tab((y = ft_nlines(ft_lstlen(list))), ft_lstlen(list));
-		shift = shift_n(shift, ft_lstlen(list), y / 2);
+		shift = ft_tab_truth(ft_lstlen(list), ft_nlines(ft_lstlen(list)));
 		i = 0;
 		while (shift[i])
+			ft_putendl(shift[i++]);
+		ft_putendl("");
+		p = tab_id_tetris(list);
+		i = 0;
+		while (i < ft_lstlen(list))
 		{
-			ft_putendl(shift[i]);
-			i++;
-		}
-		ft_putendl("_");
-		l = list;
-		while (l)
-		{
-			i = 0;
-			tetris = (t_tetris *)l->content;
-			while (tetris->tetris[i])
-			{
-				ft_putendl(tetris->tetris[i]);
-				i++;
-			}
-			ft_putendl("_");
-			ft_putnbr(get_id_tetris(tetris->tetris));
-			ft_putendl("_");
-			l = l->next;
+			ft_putnbr(p[i++]);
+			ft_putendl("");
 		}
 	}
 	else

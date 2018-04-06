@@ -1,11 +1,11 @@
 #include "fillit.h"
 
+static int		ft_cut_tetriminos(t_list *tmp);
+
 int				ft_get_tetriminos(char *av, t_list **list)
 {
 	char		*str;
 	char		**tab;
-	t_tetris	*p;
-	t_list		*tmp;
 
 	str = get_tetriminos(av);
 	str = replace_char(str, 'X');
@@ -19,7 +19,21 @@ int				ft_get_tetriminos(char *av, t_list **list)
 	}
 	*list = put_tetriminos_list(tab);
 	ft_memdel((void **)tab);
-	tmp = *list;
+	ft_cut_tetriminos(*list);
+	if (ft_tetris_mask(*list))
+	{
+		ft_putendl("error");
+		ft_lstdel(list, &ft_lstdelcontent);
+		return (1);
+	}
+	return (0);
+}
+
+static int		ft_cut_tetriminos(t_list *tmp)
+{
+	char		**tab;
+	t_tetris	*p;
+
 	while (tmp)
 	{
 		p = (t_tetris *)tmp->content;

@@ -1,13 +1,13 @@
 #include "fillit.h"
-#include <stdio.h>
 
-char			**shift_n(char **tab, int x, int y)
+char		**ft_tab_truth(int x, int y)
 {
 	int		i;
 	int		j;
 	int		k;
+	char	**tab;
 
-
+	tab = ft_malloc_tab(y, x);
 	j = -1;
 	i = 0;
 	while (++j < x)
@@ -19,7 +19,7 @@ char			**shift_n(char **tab, int x, int y)
 		while (++j < x)
 			tab[i][j - 1] = tab[i - 1][j];
 		k = -1;
-		while(y == i && --j != -1)
+		while(y / 2 == i && --j != -1)
 			tab[i][++k] = tab[i - 1][j];
 	}
 	return (tab);
