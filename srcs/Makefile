@@ -23,7 +23,6 @@ SRCS	=	./main.c \
 			./errors/tab_id_tetris.c \
 			./algorithm/tab_tmp.c \
 			./algorithm/layout_tetris_list.c \
-			./algorithm/tab_tmp.c \
 
 OBJS	=	$(SRCS:.c=.o)
 

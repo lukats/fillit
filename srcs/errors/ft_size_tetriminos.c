@@ -25,7 +25,8 @@ void			ft_size_tetriminos(t_tetris *src)
 		src->width = (src->width < t) ? t : src->width;
 		i++;
 	}
-	ft_special(src, 0, 0);
+	if (src->width == src->height)
+		ft_special(src, 0, 0);
 }
 
 static void		ft_special(t_tetris *s, U_INT i, U_INT j)
@@ -63,5 +64,7 @@ static U_INT	ft_special_count(t_tetris *s, U_INT i, U_INT j, U_INT k)
 		u += (s->tetris[i + 1][k + u] && \
 				s->tetris[i + 1][k + u] == '#') ? 1 : 0;
 	}
+	if (j == k)
+		return (t);
 	return ((t + u != 0) ? t + u - 1 : 0);
 }

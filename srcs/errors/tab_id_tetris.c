@@ -1,10 +1,10 @@
 #include "fillit.h"
 
-int			*tab_id_tetris(t_list *list)
+int				*tab_id_tetris(t_list *list)
 {
 	t_tetris	*tetris;
-	int		*tab;
-	int		i;
+	int			*tab;
+	int			i;
 
 	i = -1;
 	MALLOC_CHECK((tab = malloc(sizeof(int) * ft_lstlen(list))));

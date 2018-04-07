@@ -20,7 +20,7 @@ int				ft_get_tetriminos(char *av, t_list **list)
 	*list = put_tetriminos_list(tab);
 	ft_memdel((void **)tab);
 	ft_cut_tetriminos(*list);
-	if (ft_tetris_mask(*list))
+	if (ft_tetris_mask(*list) || ft_lstlen(*list) > 26)
 	{
 		ft_putendl("error");
 		ft_lstdel(list, &ft_lstdelcontent);
