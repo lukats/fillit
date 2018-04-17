@@ -13,8 +13,6 @@ SRCS	=	./main.c \
 			./get_tetriminos/fill_node.c \
 			./get_tetriminos/replace_char.c \
 			./get_tetriminos/ft_get_tetriminos.c \
-			./algorithm/ft_tab_truth.c \
-			./algorithm/ft_nlines.c \
 			./errors/ft_tetris_mask.c \
 			./errors/ft_new_tetris.c \
 			./errors/ft_size_tetriminos.c \
@@ -22,7 +20,8 @@ SRCS	=	./main.c \
 			./errors/get_id_tetris.c \
 			./errors/tab_id_tetris.c \
 			./algorithm/tab_tmp.c \
-			./algorithm/layout_tetris_list.c \
+			./errors/ft_free_tab.c \
+			./errors/ft_free_list.c
 
 OBJS	=	$(SRCS:.c=.o)
 

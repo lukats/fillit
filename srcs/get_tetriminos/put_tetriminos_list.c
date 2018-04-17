@@ -6,21 +6,21 @@ t_list			*put_tetriminos_list(char **lines)
 	char		**tetris;
 	t_tetris	*node;
 	t_list		*new;
-	t_list		*tmp;
 
 	i = -1;
-	tmp = 0;
 	new = 0;
 	node = 0;
 	while (lines[++i])
 	{
 		if (!(tetris = ft_strsplit(lines[i], '\n')))
-			return (tmp);
+			return (new);
 		node  = fill_node(tetris, (char) i + 65);
-		new = ft_lstnew(node, sizeof(node) + sizeof(tetris));
-		ft_memdel((void **) &node);
-		new->next = tmp;
-		tmp = new;
+		if (!i)
+			new = ft_lstnew(node, sizeof(node) + sizeof(tetris));
+		else
+			ft_lstaddb(&new, ft_lstnew(node, sizeof(node) + sizeof(tetris)));
+		ft_free_tab(tetris);
+		ft_memdel((void **)&node);
 	}
-	return (tmp);
+	return (new);
 }
