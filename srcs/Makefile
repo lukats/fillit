@@ -20,6 +20,9 @@ SRCS	=	./main.c \
 			./errors/get_id_tetris.c \
 			./errors/tab_id_tetris.c \
 			./algorithm/tab_tmp.c \
+			./algorithm/ft_backtrack.c \
+			./algorithm/ft_resolving.c \
+			./algorithm/ft_init_tab.c \
 			./errors/ft_free_tab.c \
 			./errors/ft_free_list.c
 

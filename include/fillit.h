@@ -26,8 +26,11 @@ void					ft_size_tetriminos(t_tetris *src);
 int						ft_check_tetri(char **minos);
 int						get_id_tetris(char **lines);
 int						*tab_id_tetris(t_list *list);
-char					**tab_tmp(t_list *list);
+char					**tab_tmp(t_list *list, int *size);
 void					ft_free_tab(char **tab);
 void					ft_free_list(t_list **l);
+void					ft_init_tab(char **tab, int size);
+int						ft_backtrack(t_list *l, char **tab, int size);
+char					**ft_resolving(t_list *l);
 
 #endif
