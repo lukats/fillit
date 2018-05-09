@@ -3,7 +3,7 @@
 
 # include "../libft/libft.h"
 # include <fcntl.h>
-
+#include <stdio.h>
 # define CHECK_OPEN_FILE(x) if (x <= -1) return (NULL);
 # define CHECK_READ_FILE(x) if (x <= -1) return (NULL);
 
@@ -13,12 +13,13 @@ typedef struct			s_tetris
 	U_INT				height;
 	U_INT				width;
 	char				letter;
+	char			        toto;
 }						t_tetris;
 
 int						ft_get_tetriminos(char *av, t_list **list);
 char					*replace_char(char *str, char c);
 t_list					*put_tetriminos_list(char **lines);
-char					*get_tetriminos(char *file);
+/* char					*get_tetriminos(char *file); */
 t_tetris				*fill_node(char **tetris, char lettre);
 int						ft_tetris_mask(t_list *t);
 char					**ft_new_tetris(char **tetris, t_tetris *src);
@@ -32,5 +33,6 @@ void					ft_free_list(t_list **l);
 void					ft_init_tab(char **tab, int size);
 int						ft_backtrack(t_list *l, char **tab, int size);
 char					**ft_resolving(t_list *l);
-
+void	my_print_list(t_list *list);
+void	print_tab(char **tab);
 #endif

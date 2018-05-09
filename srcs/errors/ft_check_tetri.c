@@ -10,12 +10,13 @@ int				ft_check_tetri(char **minos)
 
 	i = -1;
 	tmp = 0;
-	while (minos[++i])
+	while (minos && minos[++i])
 	{
 		MALLOC_CHECK((tmp = ft_strsplit(minos[i], '\n')));
 		if (ft_check_one(tmp) || ft_check_count(tmp))
 			return (1);
-		ft_memdel((void **)tmp);
+		/* ft_memdel((void **)tmp); */ // il faus free les deux dimension d'un tableau :)
+		ft_free_tab(tmp); // je remplacer "ft_memdel((void **)tmp)" part "ft_free_tab" pr free les deux dimension ;)
 	}
 	return (0);
 }

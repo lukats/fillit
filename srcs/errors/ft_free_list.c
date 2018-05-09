@@ -7,7 +7,7 @@ void			ft_free_list(t_list **l)
 
 	t = 0;
 	tl = *l;
-	while (tl)
+	while (tl && l)
 	{
 		t = (t_tetris *)tl->content;
 		ft_free_tab(t->tetris);

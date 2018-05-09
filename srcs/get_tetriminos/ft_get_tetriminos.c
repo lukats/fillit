@@ -2,12 +2,35 @@
 
 static int		ft_cut_tetriminos(t_list *tmp);
 
+char		*tab_tetris(char *file)
+{
+	char	*lines;
+	char	*tmp;
+	char	*p;
+	int		fd;
+
+	lines = 0;
+	tmp = ft_strnew(0);
+	p = tmp;
+	fd = open(file, O_RDONLY);
+	while (ft_gnl(fd, &lines))
+	{
+		p = tmp;
+		tmp = ft_strjoin(tmp, lines);
+		ft_memdel((void **)&p);
+		p = tmp;
+		tmp = ft_strjoin(tmp, "\n");
+		ft_memdel((void **)&p);
+	}
+	return (tmp);
+}
+
 int				ft_get_tetriminos(char *av, t_list **list)
 {
 	char		*str;
 	char		**tab;
 
-	str = get_tetriminos(av);
+	str = tab_tetris(av);
 	str = replace_char(str, 'X');
 	tab = ft_strsplit(str, 'X');
 	ft_memdel((void **)&str);

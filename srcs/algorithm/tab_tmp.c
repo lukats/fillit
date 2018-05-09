@@ -14,7 +14,7 @@ char			**tab_tmp(t_list *list, int *size)
 	else
 		*size = 2;
 	n = ft_lstlen(list) * 4;
-	while (ft_xpowni(*size, 2) < n)
+	while ((ft_xpowni(*size, 2)) < n)
 		*size += 1;
 	MALLOC_CHECK((tab = ft_malloc_tab(*size, *size)));
 	ft_init_tab(tab, *size);

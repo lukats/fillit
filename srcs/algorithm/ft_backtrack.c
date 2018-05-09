@@ -14,10 +14,13 @@ int				ft_backtrack(t_list *l, char **tab, int size)
 		return (1);
 	i = -1;
 	t = (t_tetris *)l->content;
-	while ((U_INT)++i < size - t->height)
+	int	h = 0;
+	static	int	c = 0;
+	c++;
+	while ((U_INT)++i < (h = size - t->height + 1))
 	{
 		j = -1;
-		while ((U_INT)++j < size - t->width)
+		while ((U_INT)++j < (size - t->width + 1))
 		{
 			if (ft_find_place(t, tab, i, j))
 			{
@@ -52,6 +55,28 @@ static int		ft_find_place(t_tetris *t, char **tab, int i, int j)
 	return (1);
 }
 
+/* static int		ft_find_place(t_tetris *t, char **tab, int x, int y) */
+/* { */
+/* 	U_INT		i; */
+/* 	U_INT		j; */
+
+/* 	i = 0; */
+/* 	while (i < t->width) */
+/* 	{ */
+/* 		j = 0; */
+/* 		while (j < t->height) */
+/* 		{ */
+/* 			if (t->tetris[i][j] == '#' && tab[y + j][x + i] != '.') */
+/* 				return (0); */
+/* 			j++; */
+/* 		} */
+/* 		i++; */
+/* 	} */
+/* 	ft_set_tetriminos(t, tab, x, y); */
+/* 	return (1); */
+/* } */
+
+
 static void		ft_delete_tetri(t_tetris *t, char **tab, int i, int j)
 {
 	U_INT		k;
@@ -80,7 +105,7 @@ static void		ft_set_tetriminos(t_tetris *t, char **tab, int i, int j)
 	while (k < t->height)
 	{
 		l = 0;
-		while (++l < t->width)
+		while (l < t->width)
 		{
 			if (t->tetris[k][l] == '#')
 				tab[i + k][j + l] = t->letter;

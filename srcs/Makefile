@@ -2,13 +2,12 @@ CC	=	gcc
 
 RM	=	rm -f
 
-CFLAGS	=	-Wextra -Werror -Wall -I../include/
-# CFLAGS	=	-g -I../include/
+# CFLAGS	=	-Wextra -Werror -Wall -I../include/
+CFLAGS	=	-g -I../include/
 
 NAME	=	../fillit
 
 SRCS	=	./main.c \
-			./get_tetriminos/get_tetriminos.c \
 			./get_tetriminos/put_tetriminos_list.c \
 			./get_tetriminos/fill_node.c \
 			./get_tetriminos/replace_char.c \
