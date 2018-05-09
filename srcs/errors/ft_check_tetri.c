@@ -15,8 +15,7 @@ int				ft_check_tetri(char **minos)
 		MALLOC_CHECK((tmp = ft_strsplit(minos[i], '\n')));
 		if (ft_check_one(tmp) || ft_check_count(tmp))
 		{
-			if (minos)
-				ft_free_tab(tmp);
+			ft_free_tab(tmp);
 			return (1);
 		}
 		ft_free_tab(tmp);

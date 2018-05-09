@@ -1,6 +1,5 @@
 #include "fillit.h"
 
-
 char			**tab_tmp(t_list *list, int *size)
 {
 	char		**tab;

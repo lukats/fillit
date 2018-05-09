@@ -54,7 +54,7 @@ static void		ft_delete_tetri(t_tetris *t, char **tab, int i, int j)
 	while (k < t->height)
 	{
 		l = 0;
-		while (++l < t->width)
+		while (l < t->width)
 		{
 			if (t->tetris[k][l] == '#')
 				tab[i + k][j + l] = '.';

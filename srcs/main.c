@@ -1,11 +1,11 @@
 #include "fillit.h"
+
 static void		ft_print_tab(char **tab);
 
 int				main(int ac, char **av)
 {
 	t_list		*list;
 	char		**tab;
-	t_tetris	*t;
 
 	list = 0;
 	tab = 0;
@@ -29,10 +29,6 @@ static void		ft_print_tab(char **tab)
 	int			i;
 
 	i = -1;
-	if (tab)
-		while (tab[++i])
-
-			ft_putendl(tab[i]);
-	else
-		ft_putendl("tab it is null");
+	while (tab[++i])
+		ft_putendl(tab[i]);
 }
