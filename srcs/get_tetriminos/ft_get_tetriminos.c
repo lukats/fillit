@@ -18,10 +18,13 @@ char		*tab_tetris(char *file)
 		p = tmp;
 		tmp = ft_strjoin(tmp, lines);
 		ft_memdel((void **)&p);
+		ft_memdel((void **)&lines);
+		lines = 0;
 		p = tmp;
 		tmp = ft_strjoin(tmp, "\n");
 		ft_memdel((void **)&p);
 	}
+	ft_memdel((void **)&lines);
 	return (tmp);
 }
 

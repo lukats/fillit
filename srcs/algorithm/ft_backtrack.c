@@ -14,10 +14,7 @@ int				ft_backtrack(t_list *l, char **tab, int size)
 		return (1);
 	i = -1;
 	t = (t_tetris *)l->content;
-	int	h = 0;
-	static	int	c = 0;
-	c++;
-	while ((U_INT)++i < (h = size - t->height + 1))
+	while ((U_INT)++i < (size - t->height + 1))
 	{
 		j = -1;
 		while ((U_INT)++j < (size - t->width + 1))
