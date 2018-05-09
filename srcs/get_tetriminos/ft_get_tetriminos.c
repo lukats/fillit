@@ -12,7 +12,8 @@ char		*tab_tetris(char *file)
 	lines = 0;
 	tmp = ft_strnew(0);
 	p = tmp;
-	fd = open(file, O_RDONLY);
+	if (!(fd = open(file, O_RDONLY)))
+		return (0);
 	while (ft_gnl(fd, &lines))
 	{
 		p = tmp;
@@ -33,7 +34,8 @@ int				ft_get_tetriminos(char *av, t_list **list)
 	char		*str;
 	char		**tab;
 
-	str = tab_tetris(av);
+	if (!(str = tab_tetris(av)))
+		return (1);
 	str = replace_char(str, 'X');
 	tab = ft_strsplit(str, 'X');
 	ft_memdel((void **)&str);
