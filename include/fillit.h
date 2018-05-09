@@ -19,8 +19,6 @@ typedef struct			s_tetris
 int						ft_get_tetriminos(char *av, t_list **list);
 char					*replace_char(char *str, char c);
 t_list					*put_tetriminos_list(char **lines);
-/* char					*get_tetriminos(char *file); */
-t_tetris				*fill_node(char **tetris, char lettre);
 int						ft_tetris_mask(t_list *t);
 char					**ft_new_tetris(char **tetris, t_tetris *src);
 void					ft_size_tetriminos(t_tetris *src);

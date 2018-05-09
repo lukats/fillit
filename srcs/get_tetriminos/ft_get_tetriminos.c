@@ -12,7 +12,7 @@ char		*tab_tetris(char *file)
 	lines = 0;
 	tmp = ft_strnew(0);
 	p = tmp;
-	if (!(fd = open(file, O_RDONLY)))
+	if ((fd = open(file, O_RDONLY)) < 0)
 		return (0);
 	while (ft_gnl(fd, &lines))
 	{

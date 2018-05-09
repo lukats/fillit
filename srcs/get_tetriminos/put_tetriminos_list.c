@@ -1,5 +1,7 @@
 #include "fillit.h"
 
+t_tetris	*fill_node(char **tetris, char lettre);
+
 t_list			*put_tetriminos_list(char **lines)
 {
 	int		i;
@@ -19,9 +21,17 @@ t_list			*put_tetriminos_list(char **lines)
 			new = ft_lstnew(node, sizeof(node) + sizeof(tetris) + 1);
 		else
 			ft_lstaddb(&new, ft_lstnew(node, sizeof(node) + sizeof(tetris) + 1));
-
-		/* ft_free_tab(tetris); */// ici tu free un truc que plus tard tu essaie de le re-utiliser  !
 		ft_memdel((void **)&node);
 	}
 	return (new);
+}
+
+t_tetris	*fill_node(char **tetris, char lettre)
+{
+	t_tetris	*node;
+
+	MALLOC_CHECK((node = malloc(sizeof(*node))));
+	node->tetris = tetris;
+	node->letter = lettre;
+	return (node);
 }

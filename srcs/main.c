@@ -1,42 +1,4 @@
 #include "fillit.h"
-
-void	my_print_list(t_list *list)
-{
-	t_tetris	*tmp;
-	char	**tab;
-	int	i;
-	char	c;
-
-	while (list)
-	{
-		i = -1;
-	        tmp =  list->content;
-		tab = tmp->tetris;
-		c = (char) tmp->letter;
-		while (tab[++i])
-		{
-			ft_putchar(c);
-			ft_putendl(tab[i]);
-		}
-
-		list = list->next;
-	}
-}
-
-void	print_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while(tab[i])
-	{
-		/* ft_putstr(tab[i]); */
-		ft_putendl(tab[i]);
-		i++;
-	}
-	ft_putstr("\n");
-}
-
 static void		ft_print_tab(char **tab);
 
 int				main(int ac, char **av)
